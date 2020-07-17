@@ -1,0 +1,36 @@
+name:                fluvial
+synopsis:            Fluvial topographic analysis library for Haskell
+version:             0.0.1.0
+homepage:            https://github.com/dorranh/fluvial
+license:             BSD3
+author:              Dorran Howell
+maintainer:          Dorran Howell
+copyright:           Dorran Howell
+category:            hydrology,geography
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  exposed-modules:     Fluvial
+  ghc-options:         -Wall -fno-warn-name-shadowing
+  build-depends:       base >= 4.11 && < 5
+
+executable fluvial
+  main-is:            Main.hs
+  hs-source-dirs:     app
+  default-language:   Haskell2010
+  ghc-options:        -threaded -O2
+  build-depends:      base
+                    , fluvial
+
+test-suite fluvial-tests
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   test
+  main-is:          Main.hs
+  default-language: Haskell2010
+  ghc-options:      -Wall -threaded
+  build-depends:    base >=4.11 && < 5
+                  , fluvial
+                  , hedgehog
