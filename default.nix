@@ -25,6 +25,7 @@ let
       ghcide
       ormolu
       hlint
+      zlib
       (import sources.niv {}).niv
       pkgs.nixpkgs-fmt
     ];
